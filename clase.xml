@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clase>
+    <alumno numero = "393">
+        <nombre> Luis </nombre>
+        <apellido> Luna </apellido>
+        <apodo> Na </apodo>
+        <marcas> 85 </marcas>
+    </alumno>
+    <alumno numero = "493">
+        <nombre> Antonio </nombre>
+        <apellido> Alvarez</apellido>
+            <apodo> Avez </apodo>
+            <marcas> 95 </marcas>
+    </alumno>   
+    <alumno numero = "593">
+        <nombre> Juan </nombre>
+        <apellido> Juz </apellido> 
+        <apodo> jazz </apodo>
+        <marcas> 90 </marcas>
+    </alumno>
+</clase>
