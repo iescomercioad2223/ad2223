@@ -1,0 +1,1 @@
+Ejemplo de escritura en un fichero de texto o txt.
