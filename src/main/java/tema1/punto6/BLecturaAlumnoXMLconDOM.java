@@ -19,7 +19,7 @@ public class BLecturaAlumnoXMLconDOM
 
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(new File("C:\\Users\\Antonio\\Documents\\NetBeansProjects\\Ficheros\\Prueba\\Alumnos.xml"));
+            Document document = builder.parse(new File("Alumnos.xml"));
             document.getDocumentElement().normalize();
 
             System.out.println("Elemento raiz: "+ document.getDocumentElement().getNodeName()); 

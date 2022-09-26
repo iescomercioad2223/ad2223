@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class AEscrituraFichTex {
   public static void main(String[] args) throws IOException {
-    File fichero = new File("C:\\Users\\Antonio\\Documents\\NetBeansProjects\\Ficheros\\Prueba\\FichTexto.txt"); //declaración del fichero y ruta donde se guarda        
+    File fichero = new File("FichTexto.txt"); //declaración del fichero y ruta donde se guarda        
     FileWriter fic = new FileWriter(fichero);             //flujo de salida       
     String cadena ="Ejemplo de escritura en un fichero de texto o txt";
     char[] cad = cadena.toCharArray(); //convierte la cadena en array de caracteres

@@ -8,7 +8,7 @@ import java.io.IOException;
 public class CEscribirFichData {
   public static void main(String[] args) throws IOException {   
  
-   File fichero = new File("C:\\Users\\Antonio\\Documents\\NetBeansProjects\\Ficheros\\Prueba\\FichData.dat");
+   File fichero = new File("FichData.dat");
    FileOutputStream fileout = new FileOutputStream(fichero);   
    DataOutputStream dataOS = new DataOutputStream(fileout);
  

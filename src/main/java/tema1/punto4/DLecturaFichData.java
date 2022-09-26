@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class DLecturaFichData {
   public static void main(String[] args) throws IOException {    
-   File fichero = new File("C:\\Users\\Antonio\\Documents\\NetBeansProjects\\Ficheros\\Prueba\\FichData.dat");
+   File fichero = new File("FichData.dat");
    FileInputStream filein = new FileInputStream(fichero);   
    DataInputStream dataIS = new DataInputStream(filein);
 
