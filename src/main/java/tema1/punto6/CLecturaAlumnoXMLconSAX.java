@@ -16,7 +16,7 @@ public class CLecturaAlumnoXMLconSAX {
         XMLReader procesadorXML = XMLReaderFactory.createXMLReader();
         GestionContenido gestor= new GestionContenido();
         procesadorXML.setContentHandler(gestor);
-        InputSource fileXML = new InputSource("C:\\Users\\Antonio\\Documents\\NetBeansProjects\\Ficheros\\Prueba\\Alumnos.xml");
+        InputSource fileXML = new InputSource("Ficheros\\Prueba\\Alumnos.xml");
         procesadorXML.parse(fileXML);
     }
 
