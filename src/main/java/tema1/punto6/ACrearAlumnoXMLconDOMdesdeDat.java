@@ -59,8 +59,7 @@ public class ACrearAlumnoXMLconDOMdesdeDat {
     } // Fin del programa principal (main)
     // Inserción de los datos del alumno que se le invoca desde el programa principal (main=
 
-    static void CrearElemento(String datoEmple, String valor,
-            Element raiz, Document document) {
+    static void CrearElemento(String datoEmple, String valor, Element raiz, Document document) {
         Element elem = document.createElement(datoEmple); // Creamos el nodo hijo
         Text text = document.createTextNode(valor); // Se le da el valor
         raiz.appendChild(elem); // Pegamos el elemento hijo a la raiz
