@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<libreria>
+    <ListaLibro>
+        <Libro>
+            <autor>Neil Strauss</autor>
+            <nombre>The Game</nombre>
+            <editorial>Harpercollins</editorial>
+            <isbn>978-0060554736</isbn>
+        </Libro>
+        <Libro>
+            <autor>Charlotte Roche</autor>
+            <nombre>Feuchtgebiete</nombre>
+            <editorial>Dumont Buchverlag</editorial>
+            <isbn>978-3832180577</isbn>
+        </Libro>
+    </ListaLibro>
+    <listaLibro>
+        <autor>Neil Strauss</autor>
+        <nombre>The Game</nombre>
+        <editorial>Harpercollins</editorial>
+        <isbn>978-0060554736</isbn>
+    </listaLibro>
+    <listaLibro>
+        <autor>Charlotte Roche</autor>
+        <nombre>Feuchtgebiete</nombre>
+        <editorial>Dumont Buchverlag</editorial>
+        <isbn>978-3832180577</isbn>
+    </listaLibro>
+    <lugar>Barrio Obrero</lugar>
+    <nombre>LIbreria sin limite</nombre>
+</libreria>

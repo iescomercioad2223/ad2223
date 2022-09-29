@@ -38,6 +38,8 @@ public class CLecturaAlumnoXMLconSAX {
         public GestionContenido() {
             super();
         }
+             
+        
         //Significa sobre escribir, esto ayuda entre otras cosas 
         //a reducir el código, cuando se crea una clase que hereda
         //de otra clase, hereda todos sus métodos, propiedades y atributos 
