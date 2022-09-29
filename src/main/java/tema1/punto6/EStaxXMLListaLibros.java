@@ -26,6 +26,7 @@ public class EStaxXMLListaLibros {
         // Iteramos con el cursor a lo largo del documento
         while (xmlsr.hasNext()) {
             eventType = xmlsr.next(); // Cogemos el evento causado de forma secuencial
+            
             switch (eventType) {
                 case XMLEvent.START_ELEMENT: // Principio de etiqueta
                     tag = xmlsr.getLocalName(); // Cogemos el nombre de la etiqueta
