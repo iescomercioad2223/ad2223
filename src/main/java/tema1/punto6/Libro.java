@@ -6,8 +6,6 @@ package tema1.punto6;
 
 import jakarta.xml.bind.annotation.XmlType;
 
-
-
 @XmlType(propOrder = {"nombre", "autor", "editorial", "isbn"})
 public class Libro {
 

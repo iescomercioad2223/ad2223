@@ -13,23 +13,29 @@ import java.util.ArrayList;
 //Esto significa que la clases "Libreria.java" es el elemento raiz
 
 @XmlRootElement(name="Libreria")// Nombre de la etiqueta raiz 
-@XmlType(propOrder = {"libros", "nombre", "lugar" }) // Orden de las etiquetas dentro de "Libreria"
+// Orden de las etiquetas dentro de "Libreria", si no sale como quiere
+// Se deberá poner el nombre de las propiedades: libros, nombre y lugar
+@XmlType(propOrder = {"libros", "nombre", "lugar" }) 
 public class Libreria {
-
-    //Wrapper
-    @XmlElementWrapper(name = "Libros")
-    @XmlElement(name = "Libro")
-    private ArrayList<Libro> libros;
+  
+    @XmlElementWrapper(name = "Libros") // Etiqueta que engloba los nodos Libro
+    @XmlElement(name = "Libro") // Etiqueta para cada Libro individual <libro> ... </libro>
+    private ArrayList<Libro> libros; // 
     private String nombre;
     private String lugar;
 
+    // OJO el get no se puede llamar getLibros. JAXB produce este error
+    // Porque el name de XMLElement es Libro por tanto lo llamaremos getLibro()
+    // La clase tiene dos propiedades con el mismo nombre "libros"
+    // this problem is related to the following location:
+    // at public java.util.ArrayList tema1.punto6.Libreria.getLibros()
     public ArrayList<Libro> getLibro() {
         return libros;
     }
 
-    public void setLibro(ArrayList<Libro> listaLibro) {
-        this.libros = listaLibro;
-    }
+    public void setLibros(ArrayList<Libro> libros) {
+        this.libros = libros;
+    }    
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

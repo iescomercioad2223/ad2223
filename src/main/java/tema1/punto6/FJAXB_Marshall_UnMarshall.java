@@ -20,7 +20,7 @@ import java.util.ArrayList;
  */
 public class FJAXB_Marshall_UnMarshall {
 
-    private static final String LIBRERIA_XML = "./libreria-jaxb.xml";
+    private static final String LIBRERIA_XML = "./LIBRERIA_JAXB.xml";
 
     public static void main(String[] args) throws JAXBException, IOException {
         // Lista de LIbros
@@ -42,25 +42,26 @@ public class FJAXB_Marshall_UnMarshall {
         Libreria libreria = new Libreria();
         libreria.setNombre("LIbreria sin limite");
         libreria.setLugar("Barrio Obrero");
-        libreria.setLibro(libroLista);
-        // Creamos un contexto de la clase JAXB y lo intanciamos
+        libreria.setLibros(libroLista);
+        // Creamos el contexto necesario que será necesario para crear los otros objetos
         JAXBContext context = JAXBContext.newInstance(Libreria.class);
-        
+        // Creamos los objetos necesario para hacer marshall
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        // Lo creamos con system out
+        
+        // Lo mostramos por pantalla
         m.marshal(libreria, System.out);
-//        // Escribimos en el archivo
-//        m.marshal(libreria, new File(LIBRERIA_XML));
-//        // Obtenemos las variables obtenidas del XML creado anteriormente
-//        System.out.println();
-//        System.out.println("Salida del XML: ");
-//        Unmarshaller um = context.createUnmarshaller();
-//        Libreria libreria2 = (Libreria) um.unmarshal(new FileReader(LIBRERIA_XML));
-//        ArrayList<Libro> lista = libreria2.getLibros();
-//        for (Libro libro : lista) {
-//            System.out.println("Libro: " + libro.getNombre() + " de " + libro.getAutor());
-//        }
+        // Creamos el archivo XML
+        m.marshal(libreria, new File(LIBRERIA_XML));
+       
+        // Creamos los objetos necearios para unmarshall
+        Unmarshaller um = context.createUnmarshaller();
+        System.out.println("Listado de libros (unmarshall)");
+        Libreria libreria2 = (Libreria) um.unmarshal(new FileReader(LIBRERIA_XML));
+        ArrayList<Libro> lista = libreria2.getLibro();
+        for (Libro libro : lista) {
+            System.out.println("Libro: " + libro.getNombre() + " de " + libro.getAutor());
+        }
     }
 
 }

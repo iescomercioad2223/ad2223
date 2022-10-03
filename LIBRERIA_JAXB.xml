@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Libreria>
+    <Libros>
+        <Libro>
+            <nombre>The Game</nombre>
+            <autor>Neil Strauss</autor>
+            <editorial>Harpercollins</editorial>
+            <isbn>978-0060554736</isbn>
+        </Libro>
+        <Libro>
+            <nombre>Feuchtgebiete</nombre>
+            <autor>Charlotte Roche</autor>
+            <editorial>Dumont Buchverlag</editorial>
+            <isbn>978-3832180577</isbn>
+        </Libro>
+    </Libros>
+    <nombre>LIbreria sin limite</nombre>
+    <lugar>Barrio Obrero</lugar>
+</Libreria>
