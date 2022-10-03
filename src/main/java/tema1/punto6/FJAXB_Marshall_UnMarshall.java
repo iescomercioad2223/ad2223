@@ -42,7 +42,7 @@ public class FJAXB_Marshall_UnMarshall {
         Libreria libreria = new Libreria();
         libreria.setNombre("LIbreria sin limite");
         libreria.setLugar("Barrio Obrero");
-        libreria.setListaLibro(libroLista);
+        libreria.setLibro(libroLista);
         // Creamos un contexto de la clase JAXB y lo intanciamos
         JAXBContext context = JAXBContext.newInstance(Libreria.class);
         
@@ -50,17 +50,17 @@ public class FJAXB_Marshall_UnMarshall {
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         // Lo creamos con system out
         m.marshal(libreria, System.out);
-        // Escribimos en el archivo
-        m.marshal(libreria, new File(LIBRERIA_XML));
-        // Obtenemos las variables obtenidas del XML creado anteriormente
-        System.out.println();
-        System.out.println("Salida del XML: ");
-        Unmarshaller um = context.createUnmarshaller();
-        Libreria libreria2 = (Libreria) um.unmarshal(new FileReader(LIBRERIA_XML));
-        ArrayList<Libro> lista = libreria2.getListaLibro();
-        for (Libro libro : lista) {
-            System.out.println("Libro: " + libro.getNombre() + " de " + libro.getAutor());
-        }
+//        // Escribimos en el archivo
+//        m.marshal(libreria, new File(LIBRERIA_XML));
+//        // Obtenemos las variables obtenidas del XML creado anteriormente
+//        System.out.println();
+//        System.out.println("Salida del XML: ");
+//        Unmarshaller um = context.createUnmarshaller();
+//        Libreria libreria2 = (Libreria) um.unmarshal(new FileReader(LIBRERIA_XML));
+//        ArrayList<Libro> lista = libreria2.getLibros();
+//        for (Libro libro : lista) {
+//            System.out.println("Libro: " + libro.getNombre() + " de " + libro.getAutor());
+//        }
     }
 
 }

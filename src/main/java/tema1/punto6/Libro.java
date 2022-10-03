@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 
-@XmlType(propOrder = {"autor", "nombre", "editorial", "isbn"})
+@XmlType(propOrder = {"nombre", "autor", "editorial", "isbn"})
 public class Libro {
 
     private String nombre;
