@@ -1,5 +1,5 @@
 
-package tema2.puntoX;
+package tema2.punto5_5;
 
 
 import java.sql.*;
