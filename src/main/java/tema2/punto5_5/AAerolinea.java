@@ -45,7 +45,7 @@ public class AAerolinea {
             Class.forName("oracle.jdbc.OracleDriver"); // Para comprobar la clase
             Connection conexion = null;
             // Conectamos con la base de datos
-            conexion = DriverManager.getConnection("jdbc:oracle:thin:@192.168.1.82:1521:XE", "AD", "AD");
+            conexion = DriverManager.getConnection("jdbc:oracle:thin:@192.168.66.129:1521:XE", "AEROLINEA", "docker");
             // Selecciono toda la información de la base de datos
             Statement sentencia = conexion.createStatement();
             String sqlTodo = "SELECT * FROM vuelos, pasajeros";
