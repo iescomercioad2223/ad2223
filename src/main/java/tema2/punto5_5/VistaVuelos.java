@@ -38,91 +38,111 @@ public class VistaVuelos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldHoraSalida = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldDestino = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jTextFieldProcedencia = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        jSpinnerPlazasFumador = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jSpinnerPlazasNOFumador = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
-        jSpinner2 = new javax.swing.JSpinner();
+        jSpinnerPlazasTurista = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        jSpinnerPlazasPrimera = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jButtonLimpiar = new javax.swing.JButton();
+        jButtonAlta = new javax.swing.JButton();
+        jButtonConsulta = new javax.swing.JButton();
+        jButtonBaja = new javax.swing.JButton();
+        jButtonModificacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gestión de Vuelos");
+        getContentPane().setLayout(new java.awt.BorderLayout(25, 25));
 
         jPanel1.setLayout(new java.awt.GridLayout(8, 2, 10, 10));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Código Vuelo");
         jPanel1.add(jLabel1);
         jPanel1.add(jTextFieldCodigoVuelo);
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Hora Salida");
         jPanel1.add(jLabel2);
         jPanel1.add(jTextFieldHoraSalida);
 
-        jLabel3.setText("jLabel1");
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Destino");
         jPanel1.add(jLabel3);
+        jPanel1.add(jTextFieldDestino);
 
-        jTextField3.setText("jTextField1");
-        jPanel1.add(jTextField3);
-
-        jLabel4.setText("jLabel1");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Procedencia");
         jPanel1.add(jLabel4);
+        jPanel1.add(jTextFieldProcedencia);
 
-        jTextField4.setText("jTextField1");
-        jPanel1.add(jTextField4);
-
-        jLabel5.setText("jLabel1");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Plazas de Fumador");
         jPanel1.add(jLabel5);
+        jPanel1.add(jSpinnerPlazasFumador);
 
-        jTextField5.setText("jTextField1");
-        jPanel1.add(jTextField5);
-
-        jLabel6.setText("jLabel1");
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Plazas de NO Fumador");
         jPanel1.add(jLabel6);
+        jPanel1.add(jSpinnerPlazasNOFumador);
 
-        jTextField6.setText("jTextField1");
-        jPanel1.add(jTextField6);
-
-        jLabel7.setText("jLabel1");
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("Plazas Disponibles Turista");
         jPanel1.add(jLabel7);
-        jPanel1.add(jSpinner2);
+        jPanel1.add(jSpinnerPlazasTurista);
 
-        jLabel8.setText("Plazas Disponible 1ª Clase");
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Plazas Disponibles 1ª Clase");
         jPanel1.add(jLabel8);
-        jPanel1.add(jSpinner1);
+        jPanel1.add(jSpinnerPlazasPrimera);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        jPanel2.setLayout(new java.awt.GridLayout(1, 6));
+        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0));
 
-        jButton1.setText("Limpiar");
-        jPanel2.add(jButton1);
+        jButtonLimpiar.setText("Limpiar");
+        jButtonLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimpiarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonLimpiar);
 
-        jButton2.setText("Alta");
-        jPanel2.add(jButton2);
+        jButtonAlta.setText("Alta");
+        jPanel2.add(jButtonAlta);
 
-        jButton3.setText("Baja");
-        jPanel2.add(jButton3);
+        jButtonConsulta.setText("Consulta");
+        jPanel2.add(jButtonConsulta);
 
-        jButton4.setText("Modifición");
-        jPanel2.add(jButton4);
+        jButtonBaja.setText("Baja");
+        jPanel2.add(jButtonBaja);
 
-        jButton5.setText("Consulta");
-        jPanel2.add(jButton5);
+        jButtonModificacion.setText("Modificación");
+        jPanel2.add(jButtonModificacion);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.SOUTH);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
+        // Inicializamos las cajas de texto
+        jTextFieldCodigoVuelo.setText("");
+        jTextFieldDestino.setText("");
+        jTextFieldHoraSalida.setText("");
+        jTextFieldProcedencia.setText("");
+        // Inicializamos los Spinners
+        jSpinnerPlazasFumador.setValue(0);
+        jSpinnerPlazasNOFumador.setValue(0);
+        jSpinnerPlazasPrimera.setValue(0);
+        jSpinnerPlazasTurista.setValue(0);
+    }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +181,11 @@ public class VistaVuelos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonAlta;
+    private javax.swing.JButton jButtonBaja;
+    private javax.swing.JButton jButtonConsulta;
+    private javax.swing.JButton jButtonLimpiar;
+    private javax.swing.JButton jButtonModificacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -176,13 +196,13 @@ public class VistaVuelos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JSpinner jSpinnerPlazasFumador;
+    private javax.swing.JSpinner jSpinnerPlazasNOFumador;
+    private javax.swing.JSpinner jSpinnerPlazasPrimera;
+    private javax.swing.JSpinner jSpinnerPlazasTurista;
     private javax.swing.JTextField jTextFieldCodigoVuelo;
+    private javax.swing.JTextField jTextFieldDestino;
     private javax.swing.JTextField jTextFieldHoraSalida;
+    private javax.swing.JTextField jTextFieldProcedencia;
     // End of variables declaration//GEN-END:variables
 }
