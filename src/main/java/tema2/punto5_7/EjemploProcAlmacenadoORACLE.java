@@ -1,13 +1,15 @@
 /*
- * Para probar este ejercicio será necesario tener creada la tabla employeee y 
- * el siguiente procedimiento almacenado
- CREATE OR REPLACE PROCEDURE remove_emp (employee_id NUMBER) AS
-   tot_emps NUMBER;
-   BEGIN
-      DELETE FROM employees
-      WHERE employees.employee_id = remove_emp.employee_id;
-            tot_emps := tot_emps - 1;
-   END;
+ * Para probar este ejercicio sobre la misma base de datos de AEROLINEAS 
+ * introducimos el siguiente procedimiento almacenado en ORACLE
+DELIMITER @@
+CREATE OR REPLACE PROCEDURE AD.modificar_plaza (pnum NUMBER, pcod_vuelo VARCHAR2, ptp VARCHAR2, pfum VARCHAR2) AS
+BEGIN
+    UPDATE PASAJEROS 
+    SET TIPO_PLAZA = ptp, FUMADOR=pfum 
+    WHERE PASAJEROS.NUM = pnum AND PASAJEROS.COD_VUELO=pcod_vuelo;
+END; @@
+DELIMITER ; 
+
  */
 package tema2.punto5_7;
 
@@ -27,13 +29,13 @@ public class EjemploProcAlmacenadoORACLE {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
 
             // Conecta con la base de datos XE con el usuario scott y la contraseña tiger
-            cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "scott", "tiger");
+            cn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.1.83:1521:XE", "SYSTEM", "docker");
 
             // Llamada al procedimiento almacenado
-            CallableStatement cst = cn.prepareCall("{call remove_emp (104)}");
+            CallableStatement cst = cn.prepareCall("{ CALL AD.modificar_plaza (123, 'IB-SP-4567', 'TU', 'SI') }");
             // Ejecuta el procedimiento almacenado
             cst.execute();
-            System.out.println("borrado");
+            System.out.println("Modificada la plaza");
             cst.close();
         } catch (SQLException ex) {
             System.out.println("Error: " + ex.getMessage());

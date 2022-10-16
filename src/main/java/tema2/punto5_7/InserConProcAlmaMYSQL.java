@@ -5,17 +5,16 @@
       `Nombre` tinytext,
       `Telefono` tinytext,
       PRIMARY KEY (`Cod_Cliente`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+    );
 
  * Además deberemos incluir el siguiente procedimiento
-  CREATE DEFINER=`root`@`localhost` PROCEDURE `insertaCliente`(IN Cod_Cliente INTEGER, IN Nombre TinyText,IN Telefono TinyText )
-    BEGIN
-    INSERT INTO clientes
-	VALUES (Cod_Cliente,
-		Nombre,
-		Telefono);
-
-    END
+DELIMITER $$
+CREATE DEFINER=`usuario`@`%` PROCEDURE `insertaCliente`(cod_cliente tinyint, nombre varchar(50), telefono integer)
+begin
+insert into clientes values (cod_cliente, nombre, telefono);
+commit;
+end$$
+DELIMITER ;
 */
 package tema2.punto5_7;
 
@@ -32,25 +31,24 @@ public class InserConProcAlmaMYSQL {
     public static void main(String[] args) {
         try {
             // Cargar el driver de mysql
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Cadena de conexión para conectar con MySQL en localhost,
             //seleccionar la base de datos llamada ‘test’
             // con usuario y contraseña del servidor de MySQL: root y admin
-            String connectionUrl = "jdbc:mysql://localhost/test?"
-                    + "user=root&password=admin";
+            String connectionUrl = "jdbc:mysql://192.168.1.83:3306/prueba?user=usuario&password=adad";
             // Obtener la conexión
             Connection con = DriverManager.getConnection(connectionUrl);
 
             // El procedimiento almacenado tendrá tres parámetros
             CallableStatement prcProcedimientoAlmacenado
-                    = con.prepareCall("{ call insertaCliente(?, ?,?) }");
-
+                    = con.prepareCall("{ call insertaCliente (?,?,?) }");
+               
             // cargar parametros en el procedimiento almacenado
-            prcProcedimientoAlmacenado.setInt("Cod_Cliente", 765);
-            prcProcedimientoAlmacenado.setString("Nombre", "Antonio Pérez");
-            prcProcedimientoAlmacenado.setString("Telefono", "950121314");
-
+            prcProcedimientoAlmacenado.setInt("cod_cliente", 10);
+            prcProcedimientoAlmacenado.setString("nombre", "Juan Jose");
+            prcProcedimientoAlmacenado.setInt("telefono", 625345643);
+         
             // ejecutar el procedimiento
             prcProcedimientoAlmacenado.execute();
 
